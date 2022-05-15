@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function Contact() {
+export default function Resume() {
     <div>
-        <h1>Contact Page</h1>
+        <h1>Resume Page</h1>
         <p>Add details</p>
     </div>;
 }
