@@ -9,6 +9,7 @@
     "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
     "dotenv": "^16.0.1",
+    "gh-pages": "^4.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-scripts": "5.0.1",
@@ -18,7 +19,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +40,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://qkeddy.github.io/qkeddy-dev-portfolio"
 }
