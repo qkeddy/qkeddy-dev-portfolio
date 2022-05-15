@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/qkeddy-dev-portfolio/static/css/main.e7720ab7.css",
-    "main.js": "/qkeddy-dev-portfolio/static/js/main.fed9773f.js",
+    "main.js": "/qkeddy-dev-portfolio/static/js/main.b5becf3f.js",
     "index.html": "/qkeddy-dev-portfolio/index.html",
     "main.e7720ab7.css.map": "/qkeddy-dev-portfolio/static/css/main.e7720ab7.css.map",
-    "main.fed9773f.js.map": "/qkeddy-dev-portfolio/static/js/main.fed9773f.js.map"
+    "main.b5becf3f.js.map": "/qkeddy-dev-portfolio/static/js/main.b5becf3f.js.map"
   },
   "entrypoints": [
     "static/css/main.e7720ab7.css",
-    "static/js/main.fed9773f.js"
+    "static/js/main.b5becf3f.js"
   ]
 }
