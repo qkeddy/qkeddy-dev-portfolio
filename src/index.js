@@ -5,7 +5,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 // TODO Document
-import App from "./App";
+import App from "./app";
 
 // Import minimized Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
