@@ -1,8 +1,10 @@
-import React from 'react';
+import React from "react";
 
 export default function Portfolio() {
-    <div>
-        <h1>Portfolio Page</h1>
-        <p>Add details</p>
-    </div>;
+    return (
+        <div>
+            <h1>Portfolio Page</h1>
+            <p>Add details</p>
+        </div>
+    );
 }
