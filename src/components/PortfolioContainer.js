@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 // Returns the current `Nav` based upon the current state
 import Nav from "./Nav";
+import Footer from "./Footer";
 
 // Enables topic pages in the `PortfolioContainer`
 import About from "./Pages/About";
@@ -35,6 +36,7 @@ export default function PortfolioContainer() {
             {/* Passing in JS props variables to `Nav` for `currentPage` and making the function `handlePageChange` available to `Nav` */}
             <Nav currentPage={currentPage} handlePageChange={handlePageChange} />
             {renderPage()}
+            <Footer />
         </div>
     );
 }
