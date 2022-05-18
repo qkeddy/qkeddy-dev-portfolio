@@ -1,9 +1,10 @@
 # Development Portfolio
-![badmath](https://img.shields.io/github/license/qkeddy/qkeddy/qkeddy-dev-portfolio
-![badmath](https://img.shields.io/github/issues/qkeddy/qkeddy/qkeddy-dev-portfolio
-![badmath](https://img.shields.io/github/languages/top/qkeddy/qkeddy/qkeddy-dev-portfolio
-![badmath](https://img.shields.io/github/watchers/qkeddy/qkeddy/qkeddy-dev-portfolio
-![badmath](https://img.shields.io/github/forks/qkeddy/qkeddy/qkeddy-dev-portfolio
+![badmath](https://img.shields.io/github/license/qkeddy/qkeddy-dev-portfolio)
+![badmath](https://img.shields.io/github/issues/qkeddy/qkeddy-dev-portfolio)
+![badmath](https://img.shields.io/github/languages/top/qkeddy/qkeddy-dev-portfolio)
+![badmath](https://img.shields.io/github/watchers/qkeddy/qkeddy-dev-portfolio)
+![badmath](https://img.shields.io/github/forks/qkeddy/qkeddy-dev-portfolio)
+
 
 ## Description
 A portfolio of Quinlan Eddy's web development, functional programming, and integration &amp; automation approaches.
@@ -11,7 +12,7 @@ A portfolio of Quinlan Eddy's web development, functional programming, and integ
 
 A live version of this page can be viewed [here](https://qkeddy.github.io/qkeddy-dev-portfolio).
 
-A link to the GitHub repository can be viewed [here](https://github.com/qkeddy/qkeddy/qkeddy-dev-portfolio.
+A link to the GitHub repository can be viewed [here](https://github.com/qkeddy/qkeddy/qkeddy-dev-portfolio).
 
 ## Table of Contents
 
