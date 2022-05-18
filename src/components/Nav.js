@@ -5,8 +5,10 @@ export default function Nav({ currentPage, handlePageChange }) {
     return (
         // Referencing Bootstrap style classes
         <nav className="navbar navbar-expand-lg bg-dark">
-            <div className="container-fluid justify-content-around">
-                <ul className="nav nav-pills flex-column flex-sm-row">
+            {/* <div className="container-fluid justify-content-around"> */}
+            <div className="w-100">
+                {/* <ul className="nav nav-pills flex-column flex-sm-row"> */}
+                <ul className="nav nav-pills d-flex justify-content-around flex-column flex-sm-row">
                     <li>
                         <a href="#about" onClick={() => handlePageChange("About")} className={currentPage === "About" ? "nav-link active" : "nav-link"}>
                             About
@@ -32,3 +34,4 @@ export default function Nav({ currentPage, handlePageChange }) {
         </nav>
     );
 }
+

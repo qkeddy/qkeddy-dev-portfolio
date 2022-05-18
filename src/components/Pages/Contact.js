@@ -48,26 +48,28 @@ export default function Contact() {
 
     return (
         <div>
-            <form>
-                <div className="form-group">
-                    <label>Name</label>
-                    <input value={name} name="name" onChange={handleInputChange} type="text" placeholder="name" />
-                </div>
+            <container>
+                <form>
+                    <div className="form-group">
+                        <label>Name</label>
+                        <input value={name} name="name" onChange={handleInputChange} type="text" placeholder="name" />
+                    </div>
 
-                <div className="form-group">
-                    <label>Email</label>
-                    <input value={email} name="email" onChange={handleInputChange} type="email" placeholder="email" />
-                </div>
+                    <div className="form-group">
+                        <label>Email</label>
+                        <input value={email} name="email" onChange={handleInputChange} type="email" placeholder="email" />
+                    </div>
 
-                <div className="form-group">
-                    <label>Message</label>
-                    <input value={message} name="message" onChange={handleInputChange} type="text" placeholder="message" />
-                </div>
+                    <div className="form-group">
+                        <label>Message</label>
+                        <input value={message} name="message" onChange={handleInputChange} type="text" placeholder="message" />
+                    </div>
 
-                <button type="button" onClick={handleFormSubmit}>
-                    Submit
-                </button>
-            </form>
+                    <button type="button" onClick={handleFormSubmit}>
+                        Submit
+                    </button>
+                </form>
+            </container>
 
             {errorMessage && (
                 <div>
