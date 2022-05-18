@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/qkeddy-dev-portfolio/static/css/main.e7720ab7.css",
-    "main.js": "/qkeddy-dev-portfolio/static/js/main.6ed908f4.js",
+    "main.css": "/qkeddy-dev-portfolio/static/css/main.1fe6d99a.css",
+    "main.js": "/qkeddy-dev-portfolio/static/js/main.04f0ebed.js",
+    "static/media/code.jpeg": "/qkeddy-dev-portfolio/static/media/code.f67466d6fd20983c0a9c.jpeg",
     "index.html": "/qkeddy-dev-portfolio/index.html",
-    "main.e7720ab7.css.map": "/qkeddy-dev-portfolio/static/css/main.e7720ab7.css.map",
-    "main.6ed908f4.js.map": "/qkeddy-dev-portfolio/static/js/main.6ed908f4.js.map"
+    "main.1fe6d99a.css.map": "/qkeddy-dev-portfolio/static/css/main.1fe6d99a.css.map",
+    "main.04f0ebed.js.map": "/qkeddy-dev-portfolio/static/js/main.04f0ebed.js.map"
   },
   "entrypoints": [
-    "static/css/main.e7720ab7.css",
-    "static/js/main.6ed908f4.js"
+    "static/css/main.1fe6d99a.css",
+    "static/js/main.04f0ebed.js"
   ]
 }
