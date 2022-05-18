@@ -1,0 +1,18 @@
+.jumbotron {
+    background:
+        linear-gradient(rgba(35, 35, 53, 0.8),
+            rgba(117, 146, 146, 0.7)),
+        url("../images/code.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: whitesmoke;
+    height: 200px;
+}
+
+
+.lead {
+    font-weight: 100;
+    margin-top: -10px;
+}
+

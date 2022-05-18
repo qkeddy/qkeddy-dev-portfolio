@@ -5,8 +5,8 @@ export default function Nav({ currentPage, handlePageChange }) {
     return (
         // Referencing Bootstrap style classes
         <nav className="navbar navbar-expand-lg bg-dark">
-            <div className="container-fluid">
-                <ul className="nav nav-pills flex-column flex-sm-row justify-content-end">
+            <div className="container-fluid justify-content-around">
+                <ul className="nav nav-pills flex-column flex-sm-row">
                     <li>
                         <a href="#about" onClick={() => handlePageChange("About")} className={currentPage === "About" ? "nav-link active" : "nav-link"}>
                             About

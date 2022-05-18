@@ -1,13 +1,13 @@
 import React from "react";
 
-import Nav from "./Nav";
+import "./assets/css/style.css";
 
 export default function Header() {
     return (
-        <div classItem="jumbotron jumbotron-fluid">
-            <div classItem="container">
-                <h1 classItem="display-4">Quinlan Eddy</h1>
-                <p classItem="lead">Full Stack Engineer</p>
+        <div className="jumbotron jumbotron-fluid">
+            <div className="container">
+                <h1 className="display-3">Quinlan Eddy</h1>
+                <p className="lead">Full Stack Engineer</p>
             </div>
         </div>
     );

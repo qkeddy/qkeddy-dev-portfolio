@@ -1,0 +1,16 @@
+.jumbotron {
+    background:
+        linear-gradient(rgba(0, 0, 250, 0.25),
+            rgba(125, 250, 250, 0.45)),
+        url(https://unsplash.com/photos/cvBBO4PzWPg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: whitesmoke;
+    height: 200px;
+}
+
+
+.lead {
+    font-weight: 100;
+    margin-top: -10px;
+}
