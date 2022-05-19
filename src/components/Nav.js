@@ -10,22 +10,22 @@ export default function Nav({ currentPage, handlePageChange }) {
                 {/* <ul className="nav nav-pills flex-column flex-sm-row"> */}
                 <ul className="nav nav-pills d-flex justify-content-around flex-column flex-sm-row">
                     <li>
-                        <a href="#about" onClick={() => handlePageChange("About")} className={currentPage === "About" ? "nav-link active" : "nav-link"}>
+                        <a href="#about" onClick={() => handlePageChange("About")} className={currentPage === "About" ? "nav-link active" : "nav-link"} style={{ textAlign: "center" }}>
                             About
                         </a>
                     </li>
                     <li>
-                        <a href="#portfolio" onClick={() => handlePageChange("Portfolio")} className={currentPage === "Portfolio" ? "nav-link active" : "nav-link"}>
+                        <a href="#portfolio" onClick={() => handlePageChange("Portfolio")} className={currentPage === "Portfolio" ? "nav-link active" : "nav-link"} style={{ textAlign: "center" }}>
                             Portfolio
                         </a>
                     </li>
                     <li>
-                        <a href="#resume" onClick={() => handlePageChange("Resume")} className={currentPage === "Resume" ? "nav-link active" : "nav-link"}>
+                        <a href="#resume" onClick={() => handlePageChange("Resume")} className={currentPage === "Resume" ? "nav-link active" : "nav-link"} style={{ textAlign: "center" }}>
                             Resume
                         </a>
                     </li>
                     <li>
-                        <a href="#contact" onClick={() => handlePageChange("Contact")} className={currentPage === "Contact" ? "nav-link active" : "nav-link"}>
+                        <a href="#contact" onClick={() => handlePageChange("Contact")} className={currentPage === "Contact" ? "nav-link active" : "nav-link"} style={{ textAlign: "center" }}>
                             Contact
                         </a>
                     </li>

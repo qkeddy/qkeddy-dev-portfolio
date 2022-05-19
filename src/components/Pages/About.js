@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export default function About() {
     return (
-        <div className="container  pb-4" style={{ lineHeight: 2 }}>
+        <div className="container  pb-4" style={{ lineHeight: 2, border:"1px solid black" }}>
             <div className="row">
                 <div className="col-lg-7 pt-4 pt-lg-0">
                     <img src="https://avatars.githubusercontent.com/u/9737814" className="img-thumbnail" alt="Quinlan Eddy profile picture" width="150" style={{float: "left", marginRight: "20px"}}></img>

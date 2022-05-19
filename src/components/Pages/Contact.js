@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 
-
-// Here we import a helper function that will check if the email is valid
-import { checkPassword, validateEmail } from "../../utils/helpers";
+// Import a helper function that will check if the email is valid
+import { validateEmail } from "../../utils/helpers";
 
 export default function Contact() {
-    // Create state variables for the fields in the form
-    // We are also setting their initial values to an empty string
+    // Create state variables for the fields in the form and set initial values to an empty string
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const [emptyNameMessage, setEmptyNameMessage] = useState("");
+    const [emptyEmailMessage, setEmptyEmailMessage] = useState("");
+    const [emptyMessageMessage, setEmptyMessageMessage] = useState("");
 
     const handleInputChange = (e) => {
         // Getting the value and name of the input which triggered the change
@@ -18,7 +19,7 @@ export default function Contact() {
         const inputType = target.name;
         const inputValue = target.value;
 
-        // Based on the input type, we set the state of either name, email, or message
+        // Based on the input type, set the state of either name, email, or message
         if (inputType === "email") {
             setEmail(inputValue);
         } else if (inputType === "name") {
@@ -32,50 +33,81 @@ export default function Contact() {
         // Preventing the default behavior of the form submit (which is to refresh the page)
         e.preventDefault();
 
-        // First we check to see if the email is not valid or if the name is empty. If so we set an error message to be displayed on the page.
+        // Check to see if the email is not valid or if the name is empty. If so, set an error message to be displayed on the page.
         if (!validateEmail(email)) {
             setErrorMessage("Email is invalid");
-            // We want to exit out of this code block if something is wrong so that the user can correct it
+            // Exit out of this code block if something is wrong so that the user can correct it
             return;
-            // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
         }
 
-        // If everything goes according to plan, we want to clear out the input after a successful registration.
+        // If everything goes according to plan, clear out the input after a successful registration.
         setName("");
         setMessage("");
         setEmail("");
+        setErrorMessage("");
+    };
+
+    // Notify user that the field cannot be empty
+    const resetFieldAlert = (e) => {
+        if (name.length < 1 && e.target.name === "name") {
+            setEmptyNameMessage("Field must not be empty");
+        }
+        if (name.length < 1 && e.target.name === "email") {
+            setEmptyEmailMessage("Field must not be empty");
+        }
+        if (name.length < 1 && e.target.name === "message") {
+            setEmptyMessageMessage("Field must not be empty");
+        }
+    };
+
+    // Reset field alerts
+    const emptyFieldAlert = (e) => {
+        if (e.target.name === "name") {
+            setEmptyNameMessage("");
+        }
+        if (e.target.name === "email") {
+            setEmptyEmailMessage("");
+        }
+        if (e.target.name === "message") {
+            setEmptyMessageMessage("");
+        }
     };
 
     return (
-        <div>
-            <container>
-                <form>
-                    <div className="form-group">
-                        <label>Name</label>
-                        <input value={name} name="name" onChange={handleInputChange} type="text" placeholder="name" />
+        <div className="container pt-4 pb-4">
+            <form>
+                <div className="mb-3">
+                    <label className="form-label">Name</label>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                        <input className="form-control" type="text" onBlur={resetFieldAlert} onClick={emptyFieldAlert} placeholder="" value={name} name="name" onChange={handleInputChange} style={{ flex: 1, marginRight: 10 }} />
+                        {emptyNameMessage && <div style={{ flex: 1 }}>Field must not be empty</div>}
                     </div>
-
-                    <div className="form-group">
-                        <label>Email</label>
-                        <input value={email} name="email" onChange={handleInputChange} type="email" placeholder="email" />
-                    </div>
-
-                    <div className="form-group">
-                        <label>Message</label>
-                        <input value={message} name="message" onChange={handleInputChange} type="text" placeholder="message" />
-                    </div>
-
-                    <button type="button" onClick={handleFormSubmit}>
-                        Submit
-                    </button>
-                </form>
-            </container>
-
-            {errorMessage && (
-                <div>
-                    <p className="error-text">{errorMessage}</p>
                 </div>
-            )}
+
+                <div className="mb-3">
+                    <label className="form-label">Email</label>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                        <input className="form-control" type="text" onBlur={resetFieldAlert} onClick={emptyFieldAlert} placeholder="" value={email} name="email" onChange={handleInputChange} style={{ flex: 1, marginRight: 10 }} />
+                        {emptyEmailMessage && <div style={{ flex: 1 }}>Field must not be empty</div>}
+                    </div>
+                </div>
+                {errorMessage && (
+                    <div>
+                        <p className="error-text">{errorMessage}</p>
+                    </div>
+                )}
+                <div className="mb-3">
+                    <label className="form-label">Message</label>
+                    <div style={{ display: "flex", alignItems: "center" }}>
+                        <textarea className="form-control" type="text" rows="7" onBlur={resetFieldAlert} onClick={emptyFieldAlert} placeholder="" value={message} name="message" onChange={handleInputChange} style={{ flex: 1, marginRight: 10 }} />
+                        {emptyMessageMessage && <div style={{ flex: 1 }}>Field must not be empty</div>}
+                    </div>
+                </div>
+            </form>
+
+            <button type="button" className="btn btn-primary" onClick={handleFormSubmit}>
+                Submit
+            </button>
         </div>
     );
 }
