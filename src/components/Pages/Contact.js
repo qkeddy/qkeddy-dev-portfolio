@@ -85,6 +85,9 @@ export default function Contact2() {
 
     return (
         <div className="container pt-4 pb-4">
+            <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>
+                Lets get in touch!
+            </h1>
             <form>
                 <div className="mb-3">
                     <label className="form-label">Name</label>

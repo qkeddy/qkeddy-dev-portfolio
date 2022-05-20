@@ -57,7 +57,7 @@ export default function Portfolio() {
     ];
 
     return (
-        <div>
+        <div className="container-fluid pt-4 pb-4">
             <h1 className="container" style={{ textAlign: "center" }}>
                 Featured Projects
             </h1>
