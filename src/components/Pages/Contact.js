@@ -3,73 +3,83 @@ import React, { useState } from "react";
 // Import a helper function that will check if the email is valid
 import { validateEmail } from "../../utils/helpers";
 
-export default function Contact() {
-    // Create state variables for the fields in the form and set initial values to an empty string
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
-    const [errorMessage, setErrorMessage] = useState("");
+export default function Contact2() {
+    // State variable that is a destructured object to correspond to the fields in the form and have the initial values set to an empty string
+    const [{ fullName, email, message }, setUserInput] = useState({
+        fullName: "",
+        email: "",
+        message: "",
+    });
+
+    // Additional state variables
+    const [invalidEmailMessage, setInvalidEmailMessage] = useState("");
     const [emptyNameMessage, setEmptyNameMessage] = useState("");
     const [emptyEmailMessage, setEmptyEmailMessage] = useState("");
-    const [emptyMessageMessage, setEmptyMessageMessage] = useState("");
+    const [emptyNoteMessage, setEmptyNoteMessage] = useState("");
 
+    //
     const handleInputChange = (e) => {
         // Getting the value and name of the input which triggered the change
         const { target } = e;
         const inputType = target.name;
         const inputValue = target.value;
 
-        // Based on the input type, set the state of either name, email, or message
-        if (inputType === "email") {
-            setEmail(inputValue);
-        } else if (inputType === "name") {
-            setName(inputValue);
-        } else {
-            setMessage(inputValue);
-        }
+        // Setter method for the user input state. First insert the current value of `userInput` and then dynamically set a new key:value pair
+        setUserInput({
+            fullName,
+            email,
+            message,
+            [inputType]: inputValue,
+        });
     };
 
+    // Handle the submit
+    // TODO hook up to an email service
     const handleFormSubmit = (e) => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
         e.preventDefault();
 
         // Check to see if the email is not valid or if the name is empty. If so, set an error message to be displayed on the page.
         if (!validateEmail(email)) {
-            setErrorMessage("Email is invalid");
+            setInvalidEmailMessage("Please enter a valid email address");
             // Exit out of this code block if something is wrong so that the user can correct it
             return;
         }
 
         // If everything goes according to plan, clear out the input after a successful registration.
-        setName("");
-        setMessage("");
-        setEmail("");
-        setErrorMessage("");
+        setUserInput({
+            fullName: "",
+            email: "",
+            message: "",
+        });
+
+        setInvalidEmailMessage("");
     };
 
     // Notify user that the field cannot be empty
-    const resetFieldAlert = (e) => {
-        if (name.length < 1 && e.target.name === "name") {
-            setEmptyNameMessage("Field must not be empty");
+    const checkForEmptyField = (e) => {
+        if (fullName.length < 1 && e.target.name === "fullName") {
+            displayMessage("Please let me know who you are :-)", "fullName");
         }
-        if (name.length < 1 && e.target.name === "email") {
-            setEmptyEmailMessage("Field must not be empty");
+        if (email.length < 1 && e.target.name === "email") {
+            displayMessage("A valid email would be great!", "email");
         }
-        if (name.length < 1 && e.target.name === "message") {
-            setEmptyMessageMessage("Field must not be empty");
+        if (message.length < 1 && e.target.name === "message") {
+            displayMessage("What would you like to chat about?", "message");
         }
     };
 
-    // Reset field alerts
-    const emptyFieldAlert = (e) => {
-        if (e.target.name === "name") {
-            setEmptyNameMessage("");
-        }
-        if (e.target.name === "email") {
-            setEmptyEmailMessage("");
-        }
-        if (e.target.name === "message") {
-            setEmptyMessageMessage("");
+    // Display friendly prompts for 3 seconds and then clear the conditional render
+    const displayMessage = (message, field) => {
+        if (field === "fullName") {
+            setEmptyNameMessage(message);
+            setTimeout(() => setEmptyNameMessage(""), 3000);
+        } else if (field === "email") {
+            setEmptyEmailMessage(message);
+            setTimeout(() => setEmptyEmailMessage(""), 3000);
+        } else {
+            setEmptyNoteMessage(message);
+            setTimeout(() => setEmptyNoteMessage(""), 3000);
         }
     };
 
@@ -79,28 +89,28 @@ export default function Contact() {
                 <div className="mb-3">
                     <label className="form-label">Name</label>
                     <div style={{ display: "flex", alignItems: "center" }}>
-                        <input className="form-control" type="text" onBlur={resetFieldAlert} onClick={emptyFieldAlert} placeholder="" value={name} name="name" onChange={handleInputChange} style={{ flex: 1, marginRight: 10 }} />
-                        {emptyNameMessage && <div style={{ flex: 1 }}>Field must not be empty</div>}
+                        <input className="form-control" type="text" onBlur={checkForEmptyField} placeholder="" value={fullName} name="fullName" onChange={handleInputChange} style={{ flex: 1, marginRight: 10 }} />
+                        {emptyNameMessage && <div style={{ flex: 1 }}>{emptyNameMessage}</div>}
                     </div>
                 </div>
 
                 <div className="mb-3">
                     <label className="form-label">Email</label>
                     <div style={{ display: "flex", alignItems: "center" }}>
-                        <input className="form-control" type="text" onBlur={resetFieldAlert} onClick={emptyFieldAlert} placeholder="" value={email} name="email" onChange={handleInputChange} style={{ flex: 1, marginRight: 10 }} />
-                        {emptyEmailMessage && <div style={{ flex: 1 }}>Field must not be empty</div>}
+                        <input className="form-control" type="text" onBlur={checkForEmptyField} placeholder="" value={email} name="email" onChange={handleInputChange} style={{ flex: 1, marginRight: 10 }} />
+                        {emptyEmailMessage && <div style={{ flex: 1 }}>{emptyEmailMessage}</div>}
                     </div>
                 </div>
-                {errorMessage && (
+                {invalidEmailMessage && (
                     <div>
-                        <p className="error-text">{errorMessage}</p>
+                        <p className="error-text">{invalidEmailMessage}</p>
                     </div>
                 )}
                 <div className="mb-3">
                     <label className="form-label">Message</label>
                     <div style={{ display: "flex", alignItems: "center" }}>
-                        <textarea className="form-control" type="text" rows="7" onBlur={resetFieldAlert} onClick={emptyFieldAlert} placeholder="" value={message} name="message" onChange={handleInputChange} style={{ flex: 1, marginRight: 10 }} />
-                        {emptyMessageMessage && <div style={{ flex: 1 }}>Field must not be empty</div>}
+                        <textarea className="form-control" type="text" rows="7" onBlur={checkForEmptyField} placeholder="" value={message} name="message" onChange={handleInputChange} style={{ flex: 1, marginRight: 10 }} />
+                        {emptyNoteMessage && <div style={{ flex: 1 }}>{emptyNoteMessage}</div>}
                     </div>
                 </div>
             </form>
