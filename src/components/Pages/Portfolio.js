@@ -1,13 +1,13 @@
-// Questions
-// 1) Why isn't the title being centered? Is there a bootstrap way to do this?
-// 2) In this project, what would be a good use for the index in the map?  I see that I am getting an error. 
-
-
 import React from "react";
 import Card from "./Card";
 
 // Import photos
-import weatherDashboard from "../assets/images/weather-umbrella.jpeg"
+import weatherDashboard from "../assets/images/weather-umbrella.jpeg";
+import teamProfileGenerator from "../assets/images/team-profile-generator.jpeg";
+import simpleEmployeeTracker from "../assets/images/hr-tracking.png";
+import simpleNoteTaker from "../assets/images/simple-note-taker.jpeg";
+import eCommerceBackEnd from "../assets/images/ecommerce-credit-card.jpeg";
+import balancedHierarchy from "../assets/images/balanced-hierarchies.jpeg";
 
 
 export default function Portfolio() {
@@ -20,39 +20,39 @@ export default function Portfolio() {
             gitHubLink: "https://github.com/qkeddy/weather-dashboard",
         },
         {
-            project: "Weather Dashboard",
-            image: weatherDashboard,
-            description: "HTML, Bootstrap, JavaScript",
-            deployedLink: "https://qkeddy.github.io/weather-dashboard/",
-            gitHubLink: "https://github.com/qkeddy/weather-dashboard",
+            project: "Team Profile Generator",
+            image: teamProfileGenerator,
+            description: "Node, Bootstrap, & Jest",
+            deployedLink: "https://github.com/qkeddy/team-profile-generator",
+            gitHubLink: "https://github.com/qkeddy/team-profile-generator",
         },
         {
-            project: "Weather Dashboard",
-            image: weatherDashboard,
-            description: "HTML, Bootstrap, JavaScript",
-            deployedLink: "https://qkeddy.github.io/weather-dashboard/",
-            gitHubLink: "https://github.com/qkeddy/weather-dashboard",
+            project: "Simple Employee Tracker",
+            image: simpleEmployeeTracker,
+            description: "Node, Inquirer, & MySQL",
+            deployedLink: "https://github.com/qkeddy/employee-tracker",
+            gitHubLink: "https://github.com/qkeddy/employee-tracker",
         },
         {
-            project: "Weather Dashboard",
-            image: weatherDashboard,
-            description: "HTML, Bootstrap, JavaScript",
-            deployedLink: "https://qkeddy.github.io/weather-dashboard/",
-            gitHubLink: "https://github.com/qkeddy/weather-dashboard",
+            project: "Simple Note Taker",
+            image: simpleNoteTaker,
+            description: "Node & Express.js",
+            deployedLink: "https://github.com/qkeddy/note-taker",
+            gitHubLink: "https://github.com/qkeddy/note-taker",
         },
         {
-            project: "Weather Dashboard",
-            image: weatherDashboard,
-            description: "HTML, Bootstrap, JavaScript",
-            deployedLink: "https://qkeddy.github.io/weather-dashboard/",
-            gitHubLink: "https://github.com/qkeddy/weather-dashboard",
+            project: "E-Commerce Back End",
+            image: eCommerceBackEnd,
+            description: "Node, Sequelize, & MySQL",
+            deployedLink: "https://github.com/qkeddy/e-commerce-back-end",
+            gitHubLink: "https://github.com/qkeddy/e-commerce-back-end",
         },
         {
-            project: "Weather Dashboard",
-            image: weatherDashboard,
-            description: "HTML, Bootstrap, JavaScript",
-            deployedLink: "https://qkeddy.github.io/weather-dashboard/",
-            gitHubLink: "https://github.com/qkeddy/weather-dashboard",
+            project: "Balanced Hierarchy",
+            image: balancedHierarchy,
+            description: "Patent",
+            deployedLink: "https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&s1=7571182.PN.&OS=PN/7571182&RS=PN/7571182",
+            gitHubLink: "https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&s1=7571182.PN.&OS=PN/7571182&RS=PN/7571182",
         },
     ];
 
@@ -64,7 +64,7 @@ export default function Portfolio() {
 
             <div className="d-flex flex-row flex-wrap justify-content-around">
                 {projects.map(({ project, description, image, deployedLink, gitHubLink }, index) => (
-                    <Card project={project} description={description} key={index}></Card>
+                    <Card project={project} image={image} description={description} deployedLink={deployedLink} gitHubLink={gitHubLink} key={index}></Card>
                 ))}
             </div>
         </div>
