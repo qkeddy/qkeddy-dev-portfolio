@@ -1,18 +1,12 @@
 import React from "react";
+import fullResume from "../assets/files/quinlan-eddy-resume-july-2022.pdf";
+
+// TODO - Add an import statement of the PDF
 
 export default function Resume() {
     return (
         <div className="container pt-4 pb-4">
             <h4>Eduction</h4>
-            {/* <p>
-                <strong>Professional Certificate, Computer Science</strong>
-            </p>
-            <p>University of Pennsylvania May 2022</p>
-            <p>
-                <strong>Bachelor Of Science, Business Administration</strong>
-            </p>
-            <p>University of Vermont May 1993</p> */}
-
             <ul>
                 <li>
                     <strong>Professional Certificate, Computer Science</strong>
@@ -46,9 +40,17 @@ export default function Resume() {
                 <li>General Computer Science (data structures, algorithms, Big-O notation, reliability engineering, efficient resource management)</li>
             </ul>
 
-            <a href="#" target="_blank" className="btn btn-primary">
+            <a href="./files/quinlan-eddy-resume-may-2022.pdf" className="btn btn-primary">
                 Full Resume
             </a>
+
+            {/* <a href="../assets/files/quinlan-eddy-resume-july-2022.pdf" className="btn btn-primary">
+                Full Resume
+            </a> */}
+
+            {/* <a href={fullResume} className="btn btn-primary">
+                Full Resume
+            </a> */}
         </div>
     );
 }
