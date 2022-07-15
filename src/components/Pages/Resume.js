@@ -40,7 +40,7 @@ export default function Resume() {
                 <li>General Computer Science (data structures, algorithms, Big-O notation, reliability engineering, efficient resource management)</li>
             </ul>
 
-            <a href="./files/quinlan-eddy-resume-may-2022.pdf" className="btn btn-primary">
+            <a href="./files/quinlan-eddy-resume-july-2022.pdf" className="btn btn-primary">
                 Full Resume
             </a>
 
