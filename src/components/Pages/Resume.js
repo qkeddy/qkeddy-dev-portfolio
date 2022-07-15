@@ -41,7 +41,7 @@ export default function Resume() {
             </ul>
 
             <a href="./files/quinlan-eddy-resume-july-2022.pdf" className="btn btn-primary">
-                Full Resume
+                Download Full Resume
             </a>
 
             {/* <a href="../assets/files/quinlan-eddy-resume-july-2022.pdf" className="btn btn-primary">
