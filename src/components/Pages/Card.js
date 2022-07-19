@@ -2,16 +2,16 @@ import React from "react";
 
 export default function Card({ project, description, image, deployedLink, gitHubLink }) {
     return (
-        <div className="card" style={{ width: "30rem", height: "30rem",  }}>
+        <div className="card" style={{ width: "30rem", height: "30rem" }}>
             {/* Use <Div */}
             <img src={image} className="card-img-top" alt="..."></img>
             <div className="card-body">
                 <h5 className="card-title">{project}</h5>
                 <p className="card-text">{description}</p>
-                <a href={deployedLink} target="_blank" className="btn btn-primary">
+                <a href={deployedLink} target="_blank" className="btn btn-primary mr-1">
                     Deployment
                 </a>
-                <a href={gitHubLink} target="_blank" className="btn btn-primary">
+                <a href={gitHubLink} target="_blank" className="btn btn-primary m-1">
                     Source Code
                 </a>
             </div>
