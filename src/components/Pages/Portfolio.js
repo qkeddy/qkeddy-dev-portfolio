@@ -2,12 +2,12 @@ import React from "react";
 import Card from "./Card";
 
 // Import photos
-import weatherDashboard from "../assets/images/weather-umbrella.jpeg";
-import teamProfileGenerator from "../assets/images/team-profile-generator.jpeg";
+import weatherDashboard from "../assets/images/weather-umbrella-1714-912.jpeg";
+import teamProfileGenerator from "../assets/images/team-profile-generator-1714-912.jpeg";
 import simpleEmployeeTracker from "../assets/images/hr-tracking.png";
-import simpleNoteTaker from "../assets/images/simple-note-taker.jpeg";
-import eCommerceBackEnd from "../assets/images/ecommerce-credit-card.jpeg";
-import balancedHierarchy from "../assets/images/balanced-hierarchies.jpeg";
+import simpleNoteTaker from "../assets/images/simple-note-taker-1714-912.jpeg";
+import eCommerceBackEnd from "../assets/images/ecommerce-credit-card-1714-912.jpeg";
+// import balancedHierarchy from "../assets/images/balanced-hierarchies.jpeg";
 
 
 export default function Portfolio() {
@@ -47,13 +47,13 @@ export default function Portfolio() {
             deployedLink: "https://github.com/qkeddy/e-commerce-back-end",
             gitHubLink: "https://github.com/qkeddy/e-commerce-back-end",
         },
-        {
-            project: "Balanced Hierarchy",
-            image: balancedHierarchy,
-            description: "Patent",
-            deployedLink: "https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&s1=7571182.PN.&OS=PN/7571182&RS=PN/7571182",
-            gitHubLink: "https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&s1=7571182.PN.&OS=PN/7571182&RS=PN/7571182",
-        },
+        // {
+        //     project: "Balanced Hierarchy",
+        //     image: balancedHierarchy,
+        //     description: "Patent",
+        //     deployedLink: "https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&s1=7571182.PN.&OS=PN/7571182&RS=PN/7571182",
+        //     gitHubLink: "https://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&s1=7571182.PN.&OS=PN/7571182&RS=PN/7571182",
+        // },
     ];
 
     return (

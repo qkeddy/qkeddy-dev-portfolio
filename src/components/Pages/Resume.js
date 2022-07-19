@@ -1,8 +1,6 @@
 import React from "react";
 import fullResume from "../assets/files/quinlan-eddy-resume-july-2022.pdf";
 
-// TODO - Add an import statement of the PDF
-
 export default function Resume() {
     return (
         <div className="container pt-4 pb-4">
@@ -40,17 +38,9 @@ export default function Resume() {
                 <li>General Computer Science (data structures, algorithms, Big-O notation, reliability engineering, efficient resource management)</li>
             </ul>
 
-            <a href="./files/quinlan-eddy-resume-july-2022.pdf" className="btn btn-primary">
-                Download Full Resume
+            <a href={fullResume} className="btn btn-primary" target="_blank">
+                Full Resume
             </a>
-
-            {/* <a href="../assets/files/quinlan-eddy-resume-july-2022.pdf" className="btn btn-primary">
-                Full Resume
-            </a> */}
-
-            {/* <a href={fullResume} className="btn btn-primary">
-                Full Resume
-            </a> */}
         </div>
     );
 }
