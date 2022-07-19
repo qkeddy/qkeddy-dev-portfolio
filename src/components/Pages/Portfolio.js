@@ -43,7 +43,7 @@ export default function Portfolio() {
             project: "Simple Note Taker",
             image: simpleNoteTaker,
             description: "Node & Express.js",
-            deployedLink: "https://github.com/qkeddy/note-taker",
+            deployedLink: "https://png-note-taker.herokuapp.com/",
             gitHubLink: "https://github.com/qkeddy/note-taker",
         },
         {
