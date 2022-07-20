@@ -1,21 +1,22 @@
 {
   "files": {
     "main.css": "/qkeddy-dev-portfolio/static/css/main.1fe6d99a.css",
-    "main.js": "/qkeddy-dev-portfolio/static/js/main.4f04b072.js",
+    "main.js": "/qkeddy-dev-portfolio/static/js/main.19b2ab4b.js",
     "static/media/code.jpeg": "/qkeddy-dev-portfolio/static/media/code.f67466d6fd20983c0a9c.jpeg",
     "static/media/team-profile-generator-1714-912.jpeg": "/qkeddy-dev-portfolio/static/media/team-profile-generator-1714-912.2e087c9648cecb094118.jpeg",
-    "static/media/hr-tracking.png": "/qkeddy-dev-portfolio/static/media/hr-tracking.17c44bb57043fcfef77d.png",
+    "static/media/hr-tracking-1714-912.png": "/qkeddy-dev-portfolio/static/media/hr-tracking-1714-912.17c44bb57043fcfef77d.png",
     "static/media/ecommerce-credit-card-1714-912.jpeg": "/qkeddy-dev-portfolio/static/media/ecommerce-credit-card-1714-912.6ca4ee9644020422ed07.jpeg",
     "static/media/simple-note-taker-1714-912.jpeg": "/qkeddy-dev-portfolio/static/media/simple-note-taker-1714-912.2000d6cdc3fe984c574c.jpeg",
     "static/media/book-search-1714-912.jpeg": "/qkeddy-dev-portfolio/static/media/book-search-1714-912.2eb24e585238a78796a9.jpeg",
     "static/media/quinlan-eddy-resume-july-2022.pdf": "/qkeddy-dev-portfolio/static/media/quinlan-eddy-resume-july-2022.cbb41bab7afab7bec8d8.pdf",
+    "static/media/social-network-1714-912.jpeg": "/qkeddy-dev-portfolio/static/media/social-network-1714-912.ac03f6122a4ecd5cacf5.jpeg",
     "static/media/weather-umbrella-1714-912.jpeg": "/qkeddy-dev-portfolio/static/media/weather-umbrella-1714-912.a4b9ef982eb8c2150136.jpeg",
     "index.html": "/qkeddy-dev-portfolio/index.html",
     "main.1fe6d99a.css.map": "/qkeddy-dev-portfolio/static/css/main.1fe6d99a.css.map",
-    "main.4f04b072.js.map": "/qkeddy-dev-portfolio/static/js/main.4f04b072.js.map"
+    "main.19b2ab4b.js.map": "/qkeddy-dev-portfolio/static/js/main.19b2ab4b.js.map"
   },
   "entrypoints": [
     "static/css/main.1fe6d99a.css",
-    "static/js/main.4f04b072.js"
+    "static/js/main.19b2ab4b.js"
   ]
 }
