@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 // Import a helper function that will check if the email is valid
 import { validateEmail } from "../../utils/helpers";
@@ -33,6 +34,11 @@ export default function Contact2() {
         });
     };
 
+    const templateParams = {
+        name: "James",
+        notes: "Check this out!",
+    };
+
     // Handle the submit
     // TODO hook up to an email service
     const handleFormSubmit = (e) => {
@@ -45,6 +51,15 @@ export default function Contact2() {
             // Exit out of this code block if something is wrong so that the user can correct it
             return;
         }
+
+        emailjs.send("service_cp1gu7r", "contact_form", templateParams, "2vOlRnW65FzpCZ_Bg").then(
+            (response) => {
+                console.log("SUCCESS!", response.status, response.text);
+            },
+            (err) => {
+                console.log("FAILED...", err);
+            }
+        );
 
         // If everything goes according to plan, clear out the input after a successful registration.
         setUserInput({
@@ -85,9 +100,7 @@ export default function Contact2() {
 
     return (
         <div className="container pt-4 pb-4">
-            <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>
-                Lets get in touch!
-            </h1>
+            <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>Lets get in touch!</h1>
             <form>
                 <div className="mb-3">
                     <label className="form-label">Name</label>
