@@ -20,12 +20,12 @@ export default function Contact2() {
 
     //
     const handleInputChange = (e) => {
-        // Getting the value and name of the input which triggered the change
+        // Getting the value and name of the input which triggered the change. `name` is set in the JSX.
         const { target } = e;
         const inputType = target.name;
         const inputValue = target.value;
 
-        // Setter method for the user input state. First insert the current value of `userInput` and then dynamically set a new key:value pair
+        // Setter method for the user input state. First insert the current value of `userInput` and then dynamically add & set a new key:value pair based upon the `inputType`
         setUserInput({
             fullName,
             email,
@@ -34,13 +34,14 @@ export default function Contact2() {
         });
     };
 
+    // Set the template parameters in the email template required by https://www.emailjs.com/
     const templateParams = {
-        name: "James",
-        notes: "Check this out!",
+        fullName,
+        email,
+        message,
     };
 
     // Handle the submit
-    // TODO hook up to an email service
     const handleFormSubmit = (e) => {
         // Preventing the default behavior of the form submit (which is to refresh the page)
         e.preventDefault();
@@ -52,6 +53,7 @@ export default function Contact2() {
             return;
         }
 
+        // TODO update with parameters
         emailjs.send("service_cp1gu7r", "contact_form", templateParams, "2vOlRnW65FzpCZ_Bg").then(
             (response) => {
                 console.log("SUCCESS!", response.status, response.text);
@@ -61,7 +63,7 @@ export default function Contact2() {
             }
         );
 
-        // If everything goes according to plan, clear out the input after a successful registration.
+        // Clear out the input after a successful registration.
         setUserInput({
             fullName: "",
             email: "",
