@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
+import ReCaptchaV2 from "react-google-recaptcha";
 
 // Import a helper function that will check if the email is valid
 import { validateEmail } from "../../utils/helpers";
@@ -10,6 +11,7 @@ export default function Contact2() {
         fullName: "",
         email: "",
         message: "",
+        token: ""
     });
 
     // Additional state variables
@@ -17,6 +19,8 @@ export default function Contact2() {
     const [emptyNameMessage, setEmptyNameMessage] = useState("");
     const [emptyEmailMessage, setEmptyEmailMessage] = useState("");
     const [emptyNoteMessage, setEmptyNoteMessage] = useState("");
+    // const [token, setToken] = useState("");
+    
 
     //
     const handleInputChange = (e) => {
@@ -53,7 +57,7 @@ export default function Contact2() {
             return;
         }
 
-        // TODO update with parameters
+        // TODO update with process.env
         emailjs.send("service_cp1gu7r", "contact_form", templateParams, "2vOlRnW65FzpCZ_Bg").then(
             (response) => {
                 console.log("SUCCESS!", response.status, response.text);
@@ -100,6 +104,18 @@ export default function Contact2() {
         }
     };
 
+    const handleToken = (token) => {
+        setUserInput((currentForm) => {
+            return { ...currentForm, token };
+        });
+    };
+
+    const handleExpire = () => {
+        setUserInput((currentForm) => {
+            return { ...currentForm, token: null };
+        });
+    };
+
     return (
         <div className="container pt-4 pb-4">
             <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>Lets get in touch!</h1>
@@ -132,6 +148,14 @@ export default function Contact2() {
                     </div>
                 </div>
             </form>
+            {/* <ReCaptchaV2 sitekey={process.env.REACT_APP_SITE_KEY} /> */}
+            {/* <ReCaptchaV2 sitekey={"6LeMgy0hAAAAACpTIGf0iPI1vC74sVURdbtQHZCX"} /> */}
+
+            <ReCaptchaV2
+                sitekey={"6LeMgy0hAAAAACpTIGf0iPI1vC74sVURdbtQHZCX"}
+                onChange={handleToken}
+                onExpired={handleExpire}
+            />
 
             <button type="button" className="btn btn-primary" onClick={handleFormSubmit}>
                 Submit
