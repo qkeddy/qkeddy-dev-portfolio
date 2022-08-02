@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/qkeddy-dev-portfolio/static/css/main.1fe6d99a.css",
-    "main.js": "/qkeddy-dev-portfolio/static/js/main.f2799dc3.js",
+    "main.js": "/qkeddy-dev-portfolio/static/js/main.6bb3c0fd.js",
     "static/media/code.jpeg": "/qkeddy-dev-portfolio/static/media/code.f67466d6fd20983c0a9c.jpeg",
     "static/media/team-profile-generator-1714-912.jpeg": "/qkeddy-dev-portfolio/static/media/team-profile-generator-1714-912.2e087c9648cecb094118.jpeg",
     "static/media/hr-tracking-1714-912.png": "/qkeddy-dev-portfolio/static/media/hr-tracking-1714-912.17c44bb57043fcfef77d.png",
@@ -13,10 +13,10 @@
     "static/media/weather-umbrella-1714-912.jpeg": "/qkeddy-dev-portfolio/static/media/weather-umbrella-1714-912.a4b9ef982eb8c2150136.jpeg",
     "index.html": "/qkeddy-dev-portfolio/index.html",
     "main.1fe6d99a.css.map": "/qkeddy-dev-portfolio/static/css/main.1fe6d99a.css.map",
-    "main.f2799dc3.js.map": "/qkeddy-dev-portfolio/static/js/main.f2799dc3.js.map"
+    "main.6bb3c0fd.js.map": "/qkeddy-dev-portfolio/static/js/main.6bb3c0fd.js.map"
   },
   "entrypoints": [
     "static/css/main.1fe6d99a.css",
-    "static/js/main.f2799dc3.js"
+    "static/js/main.6bb3c0fd.js"
   ]
 }
