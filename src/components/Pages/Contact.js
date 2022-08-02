@@ -71,13 +71,18 @@ export default function Contact() {
         );
 
         // Clear out the input after a successful registration.
+        // TODO - Reset Captcha
         setUserInput({
             fullName: "",
             email: "",
             message: "",
         });
 
+        // TODO - remove after refactor
         setInvalidEmailMessage("");
+
+        // Reset the reCAPTCHA 
+        window.grecaptcha.reset();
     };
 
     // Notify user that the field cannot be empty
@@ -111,8 +116,7 @@ export default function Contact() {
     // TODO - document with credit to https://github.com/KaemonIsland/recaptcha-example/blob/main/src/FormEnd.jsx
     const handleToken = (token) => {
         setUserInput((currentForm) => {
-            console.log(`reCAPTCHA token: ${token}`);
-            console.log(currentForm);
+            // console.log(`reCAPTCHA token: ${token}`);
             return { ...currentForm, token };
         });
     };
@@ -120,10 +124,14 @@ export default function Contact() {
     // TODO - document with credit to https://github.com/KaemonIsland/recaptcha-example/blob/main/src/FormEnd.jsx
     const handleExpire = () => {
         setUserInput((currentForm) => {
-            console.log(`reCAPTCHA token cleared`);
+            // console.log(`reCAPTCHA token cleared`);
             return { ...currentForm, token: null };
         });
     };
+
+    const reset = () => {
+        ReCaptchaV2.reset()
+    }
 
     return (
         <div className="container pt-4 pb-4">
