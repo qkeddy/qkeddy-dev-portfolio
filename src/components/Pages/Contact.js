@@ -5,13 +5,13 @@ import ReCaptchaV2 from "react-google-recaptcha";
 // Import a helper function that will check if the email is valid
 import { validateEmail } from "../../utils/helpers";
 
-export default function Contact2() {
+export default function Contact() {
     // State variable that is a destructured object to correspond to the fields in the form and have the initial values set to an empty string
-    const [{ fullName, email, message }, setUserInput] = useState({
+    const [{ fullName, email, message, token }, setUserInput] = useState({
         fullName: "",
         email: "",
         message: "",
-        token: ""
+        token: "",
     });
 
     // Additional state variables
@@ -19,8 +19,6 @@ export default function Contact2() {
     const [emptyNameMessage, setEmptyNameMessage] = useState("");
     const [emptyEmailMessage, setEmptyEmailMessage] = useState("");
     const [emptyNoteMessage, setEmptyNoteMessage] = useState("");
-    // const [token, setToken] = useState("");
-    
 
     //
     const handleInputChange = (e) => {
@@ -28,6 +26,8 @@ export default function Contact2() {
         const { target } = e;
         const inputType = target.name;
         const inputValue = target.value;
+
+        // console.log(target.value);
 
         // Setter method for the user input state. First insert the current value of `userInput` and then dynamically add & set a new key:value pair based upon the `inputType`
         setUserInput({
@@ -38,11 +38,14 @@ export default function Contact2() {
         });
     };
 
-    // Set the template parameters in the email template required by https://www.emailjs.com/
-    const templateParams = {
-        fullName,
-        email,
-        message,
+    // Set the template parameters and dynamically set the token in the email template required by https://www.emailjs.com/docs/rest-api/send/
+    const templateParams = (token) => {
+        return {
+            fullName,
+            email,
+            message,
+            "g-recaptcha-response": token,
+        };
     };
 
     // Handle the submit
@@ -58,7 +61,7 @@ export default function Contact2() {
         }
 
         // TODO update with process.env
-        emailjs.send("service_cp1gu7r", "contact_form", templateParams, "2vOlRnW65FzpCZ_Bg").then(
+        emailjs.send("service_cp1gu7r", "contact_form", templateParams(token), "2vOlRnW65FzpCZ_Bg").then(
             (response) => {
                 console.log("SUCCESS!", response.status, response.text);
             },
@@ -91,6 +94,7 @@ export default function Contact2() {
     };
 
     // Display friendly prompts for 3 seconds and then clear the conditional render
+    // TODO - Remove timer and convert to a redbox and always display a message
     const displayMessage = (message, field) => {
         if (field === "fullName") {
             setEmptyNameMessage(message);
@@ -104,14 +108,19 @@ export default function Contact2() {
         }
     };
 
+    // TODO - document with credit to https://github.com/KaemonIsland/recaptcha-example/blob/main/src/FormEnd.jsx
     const handleToken = (token) => {
         setUserInput((currentForm) => {
+            console.log(`reCAPTCHA token: ${token}`);
+            console.log(currentForm);
             return { ...currentForm, token };
         });
     };
 
+    // TODO - document with credit to https://github.com/KaemonIsland/recaptcha-example/blob/main/src/FormEnd.jsx
     const handleExpire = () => {
         setUserInput((currentForm) => {
+            console.log(`reCAPTCHA token cleared`);
             return { ...currentForm, token: null };
         });
     };
@@ -148,15 +157,14 @@ export default function Contact2() {
                     </div>
                 </div>
             </form>
-            {/* <ReCaptchaV2 sitekey={process.env.REACT_APP_SITE_KEY} /> */}
-            {/* <ReCaptchaV2 sitekey={"6LeMgy0hAAAAACpTIGf0iPI1vC74sVURdbtQHZCX"} /> */}
 
+            {/* TODO update with process.env */}
+            {/* <ReCaptchaV2 sitekey={process.env.REACT_APP_SITE_KEY} /> */}
             <ReCaptchaV2
                 sitekey={"6LeMgy0hAAAAACpTIGf0iPI1vC74sVURdbtQHZCX"}
                 onChange={handleToken}
                 onExpired={handleExpire}
             />
-
             <button type="button" className="btn btn-primary" onClick={handleFormSubmit}>
                 Submit
             </button>
